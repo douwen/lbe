@@ -1,0 +1,26 @@
+<!ENTITY linkmugmug.title "Linkmug 发送">
+<!ENTITY linkmugmug.sendlink "要发送的链接">
+<!ENTITY linkmugmug.sendtitle "标题">
+<!ENTITY linkmugmug.desc "描述">
+<!ENTITY linkmugmug.tags "标签">
+<!ENTITY linkmugmug.sep  "用空格、逗号或分号分割多个tag,短语tag须加引号">
+<!ENTITY linkmugmug.postlevel  "发送级别">
+<!ENTITY linkmugmug.postpublic  "公开">
+<!ENTITY linkmugmug.publictooltip  "除您选择的Mug外,您发送的链接将同时在Linkmug站点发布">
+<!ENTITY linkmugmug.postmug  "Mug">
+<!ENTITY linkmugmug.mugtooltip  "您发送的链接将仅仅发布到您选择的Mug">
+<!ENTITY linkmugmug.postprivate  "私有">
+<!ENTITY linkmugmug.privatetooltip  "您发送的链接将仅仅保存到您在Linkmug的个人收藏">
+<!ENTITY linkmugmug.sendmsg "要发送的消息">
+<!ENTITY linkmugmug.justsendmsg "仅仅发送消息, 不发送当前链接">
+<!ENTITY linkmugmug.selectmugs "请选择您要发送的Mug">
+<!ENTITY linkmugmug.intro_selectmug "当您的发布私有或公开(链接)时，也可不选择Mug，这时,该连接将仅仅存储到您的个人书签(私有级别)或Linkmug共享空间(公开级别)">
+<!ENTITY linkmugmug.mugname "Mug名称">
+<!ENTITY linkmugmug.mugowner "Mug创建者">
+<!ENTITY linkmugmug.mugfeature "Mug特征">
+<!ENTITY linkmugmug.mugusernum "用户数">
+<!ENTITY linkmugmug.you-selected "你选择了">
+<!ENTITY linkmugmug.mugs "Mug">
+<!ENTITY linkmugmug.selectallmug "全选">
+<!ENTITY linkmugmug.selectnonemug "全不选">
+

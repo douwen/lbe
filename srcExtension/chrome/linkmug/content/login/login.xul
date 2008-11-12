@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/login.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/login.dtd">
+<dialog 	
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="Linkmug_Login.onLoad();"
+	id="linkmug-login-dlg"
+	title="&LinkmugLogin;" 
+	buttons="accept"
+	buttonlabelaccept="Login"	
+	ondialogaccept="return Linkmug_Login.doLogin();"	
+	buttonpack="center"
+	buttonalign="center" >
+        
+
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/http.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="login.js" />
+<stringbundleset id="stringbundleset">
+    <stringbundle id="linkmug-login-strings" src="chrome://linkmug/locale/login.properties"/>
+  </stringbundleset>
+<dialogheader title="&not-login;" description=""/>
+<vbox align="center" pack="center">
+
+    <hbox class="margin-box" align="center" pack="center">	
+       <image id="you-are-not-login-yet-img" />
+       <label id="you-are-not-login-yet" value="&sign-in-first;"/>
+    </hbox>
+    <grid  flex="1">
+       <columns>
+          <column />
+          <column flex="1" />
+       </columns>
+       <rows>
+          <row align="center">
+             <label control="linkmug-login-name" value="&email;"/>
+             <textbox id="linkmug-login-name" /> 
+       </row>
+          <row align="center">
+             <label control="linkmug-login-password" value="&password;"/>
+             <textbox id="linkmug-login-password" type="password"/> 
+         </row>         
+       </rows>
+       
+    </grid>
+    <hbox class="margin-box" align="center" pack="center">	   
+       <label id="login-status" value="" />
+       <progressmeter
+            id="linkmug-progressmeter"       
+            mode="undetermined" 
+            status="hide"/> 
+    </hbox>
+    
+    <hbox  pack="center" align="center">
+       <label id="signup-label" value="&signup.label;"/>
+       <label id="signup-link" value="&signup;"
+  		class="text-link"       
+        onclick="Linkmug_Utils.openURL(event.target.getAttribute('href'));"/>
+    </hbox>
+</vbox>
+</dialog>

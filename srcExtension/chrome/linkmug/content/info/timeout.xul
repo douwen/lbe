@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/timeout.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/timeout.dtd">
+<dialog  
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="window.sizeToContent();"
+	id="linkmug-timeout-dlg"
+	title="&timeout-title;" 
+	buttons="accept"
+	buttonlabelaccept="&ok;"
+	ondialogaccept="return doOK();">
+<script>
+function doOK()
+{   
+  return true;
+}
+</script>
+<dialogheader title="&linkmug-timeout;" description="&server-timeout;"/>
+<vbox align="center" pack="center" >
+<image id= "linkmug-info"/>		
+<description>
+	&timeout-info;
+</description>
+<description>
+	&auto-retry;
+</description>
+</vbox>
+</dialog>

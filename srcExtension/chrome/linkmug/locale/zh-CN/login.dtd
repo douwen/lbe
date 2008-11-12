@@ -1,0 +1,7 @@
+<!ENTITY LinkmugLogin		"Linkmug 登录">
+<!ENTITY not-login		    "您尚未登录!">
+<!ENTITY sign-in-first	    "请首先登录Linkmug!">
+<!ENTITY email	            "登录Email">
+<!ENTITY password	    	"口令">
+<!ENTITY signup.label		"如果你还没有Linkmug帐号,请先">
+<!ENTITY signup		        "注册">

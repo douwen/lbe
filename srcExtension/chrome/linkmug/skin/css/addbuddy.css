@@ -1,0 +1,12 @@
+label#buddy-name{
+	color:#d58f07;
+	font-size:16px;
+	font-weight:500;	
+}
+label.prompt{
+	color:#000;
+	font-size:14px;	
+}
+dialogheader{
+  background-color:#729106;
+}

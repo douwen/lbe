@@ -1,0 +1,7 @@
+<!ENTITY LinkmugLogin		"Linkmug login">
+<!ENTITY not-login		    "You are not login yet!">
+<!ENTITY sign-in-first	    "Please sign in first!">
+<!ENTITY email	            "Email">
+<!ENTITY password	    	"Password">
+<!ENTITY signup.label		"if have not an account, you must first">
+<!ENTITY signup		        "signup">

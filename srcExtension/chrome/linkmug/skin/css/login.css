@@ -1,0 +1,42 @@
+dialogheader {
+	background-color:#A7CA20;
+}
+
+#you-are-not-login-yet-img {
+list-style-image: url("chrome://linkmug/skin/images/signin.png");
+}
+label#you-are-not-login-yet{
+	color:#720C61;
+	font-size:18px;
+	font-weight:500;	
+}
+label#signup-label
+{
+	color:#492F2F;
+	font-size:16px;
+	font-weight:500;
+}
+label#signup-link
+{
+	
+	font-size:18px;
+	font-weight:600;
+}
+
+#linkmug-progressmeter[status="show"]{
+	display: block;	
+}
+#linkmug-progressmeter[status="hide"]{
+	display: none;	
+}
+hbox.margin-box{
+	margin:10px;	
+}
+
+label#login-status
+{ 
+	color:#D82727;
+	font-size:16px;
+	font-weight:500;
+     
+}

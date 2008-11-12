@@ -1,0 +1,35 @@
+<!ENTITY linkmugToolbar.sharelabel "发送给Mug">
+<!ENTITY linkmugToolbar.friendlabel "发送给好友">
+<!ENTITY linkmugToolbar.sharetooltip "发送给Mug">
+<!ENTITY linkmugToolbar.buddytooltip "发送给好友">
+<!ENTITY linkmugToolbar.preference "Linkmug 选项">
+<!ENTITY linkmugToolbar.home "Linkmug主页">
+<!ENTITY linkmugToolbar.mystuff "我的Linkmug">
+<!ENTITY linkmugToolbar.wirter "创建Web页面">
+<!ENTITY linkmugToolbar.about "关于 Linkmug">
+<!ENTITY linkmugToolbar.sendthis "发送当前链接">
+<!ENTITY linkmugToolbar.senditem "发送所点击链接">
+<!ENTITY linkmugToolbar.showbar "显示Linkmug信息条">
+<!ENTITY linkmugToolbar.hidebar "隐藏Linkmug信息条">
+<!ENTITY linkmugToolbar.grippy-last   "上一条信息">
+<!ENTITY linkmugToolbar.grippy-next   "下一条信息">
+<!ENTITY linkmugToolbar.grippy-hide   "隐藏Linkmug信息条">
+<!ENTITY linkmugToolbar.clearall      "清除所有消息">
+<!ENTITY at-time              "于">
+<!ENTITY said                 "说道:">
+<!ENTITY send-you-link-with-title "发给您一个链接,标题是:">
+<!ENTITY block-sender              "屏蔽">
+<!ENTITY reply-all                 "回复所有">
+<!ENTITY see-it                    "瞧瞧">
+<!ENTITY remove                    "删除">
+<!ENTITY reply-sender              "回复">
+<!ENTITY join-mug                  "邀请你加入Mug">
+<!ENTITY invite-check              "看看">
+<!ENTITY linkmug.statusbar         "Linkmug状态条">
+<!ENTITY addfriend                 "添加为你的好友">
+<!ENTITY linkmugToolbar.imonline   "在线">
+<!ENTITY linkmugToolbar.imoffline  "离线">
+<!ENTITY linkmugToolbar.imbusy     "忙碌">
+<!ENTITY linkmugToolbar.imidle     "空闲">
+<!ENTITY linkmugToolbar.imleave    "离开">
+<!ENTITY addcomment                "添加评论">

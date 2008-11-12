@@ -1,0 +1,27 @@
+dialogheader {
+	background-color:#A7CA20;
+}
+
+#reply-message-img {
+list-style-image: url("chrome://linkmug/skin/images/info-big.png");
+}
+label#reply-message-label{	
+	font-size:1em;		
+}
+
+hbox.margin-box{
+	margin:10px;	
+}
+label#message-receiver_label
+{
+   color:#48474d;
+   font-size:1em;
+   font-weight:bold; 
+}
+label#reply-status
+{ 
+	color:#D82727;
+	font-size:16px;
+	font-weight:500;
+     
+}

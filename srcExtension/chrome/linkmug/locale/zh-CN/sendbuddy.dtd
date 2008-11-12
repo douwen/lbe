@@ -1,0 +1,11 @@
+<!ENTITY linkmugbuddy.title "Linkmug - 发送给好友">
+<!ENTITY linkmugbuddy.sendlink "要发送的链接">
+<!ENTITY linkmugbuddy.sendtitle "标题">
+<!ENTITY linkmugbuddy.desc "描述">
+<!ENTITY linkmugbuddy.tags "标签">
+<!ENTITY linkmugbuddy.sep  "用空格、逗号或分号分割多个tag,短语tag须加引号">
+<!ENTITY linkmugbuddy.sendmsg "要发送的消息">
+<!ENTITY linkmugbuddy.justsendmsg "仅仅发送消息,不发送当前链接">
+<!ENTITY linkmugbuddy.send "发送">
+<!ENTITY linkmugbuddy.cancel "取消">
+<!ENTITY linkmugbuddy.sendto "发送给">

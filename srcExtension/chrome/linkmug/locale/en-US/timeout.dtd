@@ -1,0 +1,6 @@
+<!ENTITY timeout-title		"Linkmug Timeout">
+<!ENTITY ok		            "Ok"> 
+<!ENTITY linkmug-timeout	"Linkmug  Timeout">
+<!ENTITY server-timeout		"Linkmug Server Timeout">
+<!ENTITY timeout-info		"Linkmug encounter timeout error,please check network">
+<!ENTITY auto-retry		    "linkmug will auto retry later">

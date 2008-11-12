@@ -1,0 +1,12 @@
+<!ENTITY linkmugbuddy.title "Linkmug - Send to Buddy">
+<!ENTITY linkmugbuddy.sendlink "Link to Send">
+<!ENTITY linkmugbuddy.sendtitle "Title">
+<!ENTITY linkmugbuddy.desc "Description">
+<!ENTITY linkmugbuddy.tags "Tags">
+<!ENTITY linkmugbuddy.sep  "separating multi tags by space,comma or semicolon,multi-word tag must be quoted">
+<!ENTITY linkmugbuddy.sendmsg "Message to Send">
+<!ENTITY linkmugbuddy.justsendmsg "Just send message, not current link">
+<!ENTITY linkmugbuddy.send "Send it">
+<!ENTITY linkmugbuddy.cancel "Cancel">
+<!ENTITY linkmugbuddy.sendto "Send to">
+

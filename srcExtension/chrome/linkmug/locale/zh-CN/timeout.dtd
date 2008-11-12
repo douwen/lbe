@@ -1,0 +1,6 @@
+<!ENTITY timeout-title		"Linkmug 超时">
+<!ENTITY ok		            "好的"> 
+<!ENTITY linkmug-timeout	"Linkmug 超时">
+<!ENTITY server-timeout		"Linkmug 服务器超时">
+<!ENTITY timeout-info		"Linkmug 出现超时错误,请检查网络">
+<!ENTITY auto-retry		    "linkmug 会自动重试!">

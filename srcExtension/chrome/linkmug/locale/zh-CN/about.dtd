@@ -1,0 +1,8 @@
+<!ENTITY win.title		"关于Linkmug 扩展">
+<!ENTITY extName.label		"Linkmug">
+<!ENTITY extVersion.label	"版本 0.2.0.5.20080530 - Copyright (c) 2008">
+<!ENTITY developedBy.label	"开发者">
+<!ENTITY author.label		"Dou Wen">
+<!ENTITY homepage.label		"主页">
+<!ENTITY homepageURL.label	"Linkmug主页">
+<!ENTITY close.label		"关闭">

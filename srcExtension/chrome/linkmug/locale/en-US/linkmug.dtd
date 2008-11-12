@@ -1,0 +1,37 @@
+<!ENTITY linkmugToolbar.sharelabel "Send to Mug">
+<!ENTITY linkmugToolbar.friendlabel "Send to Buddy">
+<!ENTITY linkmugToolbar.sharetooltip "Send to Mug">
+<!ENTITY linkmugToolbar.buddytooltip "Send to Buddy">
+<!ENTITY linkmugToolbar.preference "Linkmug Preference">
+<!ENTITY linkmugToolbar.home "Linkmug Home">
+<!ENTITY linkmugToolbar.mystuff "My Linkmug">
+<!ENTITY linkmugToolbar.wirter "Create Web Page">
+<!ENTITY linkmugToolbar.about "About Linkmug">
+<!ENTITY linkmugToolbar.sendthis "Send this Link">
+<!ENTITY linkmugToolbar.senditem "Send pointed Link">
+<!ENTITY linkmugToolbar.showbar "Show Linkmug Bar">
+<!ENTITY linkmugToolbar.hidebar "Hide Linkmug Bar">
+<!ENTITY linkmugToolbar.grippy-last   "Last Message">
+<!ENTITY linkmugToolbar.grippy-next   "Next Message">
+<!ENTITY linkmugToolbar.grippy-hide   "Hide Linkmug Bar">
+<!ENTITY linkmugToolbar.clearall      "Clear All Messages">
+<!ENTITY at-time              "at">
+<!ENTITY said                 "said:">
+<!ENTITY send-you-link-with-title "send you a link which titled:">
+<!ENTITY block-sender              "block">
+<!ENTITY reply-all                 "Replay to All">
+<!ENTITY see-it                    "go">
+<!ENTITY remove                    "remove">
+<!ENTITY reply-sender              "reply">
+<!ENTITY join-mug                  "invite you to join Mug">
+<!ENTITY invite-check              "check it">
+<!ENTITY linkmug.statusbar         "Linkmug StatusBar">
+<!ENTITY addfriend                 "Add to Your Friend list">
+<!ENTITY linkmugToolbar.imonline   "Online">
+<!ENTITY linkmugToolbar.imoffline  "Offline">
+<!ENTITY linkmugToolbar.imbusy     "Busy">
+<!ENTITY linkmugToolbar.imidle     "Idle">
+<!ENTITY linkmugToolbar.imleave    "Leave">
+<!ENTITY addcomment                "add comment">
+
+

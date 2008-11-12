@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/sendmug.css" type="text/css"?>
+<!DOCTYPE wizard SYSTEM "chrome://linkmug/locale/sendmug.dtd">
+<wizard id="linkmug-send-wizard" title="&linkmugmug.title;"
+     onwizardfinish="return Linkmug_SendMug.onFinish();" 
+     onwizardcancel="Linkmug_SendMug.onCancel();"     
+     onunload="Linkmug_SendMug.onUnload();"     
+     width="710"
+     height="610"   
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/md5.js" />   
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/uuid.js"/>
+   <script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />
+   <script type="application/x-javascript" src="sendmug.js" />
+   <stringbundleset id="stringbundleset">
+    <stringbundle id="sendmug-strings" src="chrome://linkmug/locale/sendmug.properties"/>
+  </stringbundleset>
+<wizardpage>
+	 
+	<vbox flex="1" align="center" pack="center">
+	      <vbox flex="1" id="send-link-vbox" align="center" pack="center">	        	
+			 <groupbox id= "link-send-gbox" flex="1">
+			    <caption>
+					<image id="linkmug-link-send-img" />
+					<label id="linkmug-link-label">
+						&linkmugmug.sendlink;
+					</label>
+				</caption>
+				<grid flex="1">
+					<columns>
+						<column />						
+						<column flex="1"/>	    				
+					</columns>
+					<rows>
+						<row align="center" >
+							<label class="link-label" control="linkmug-url-textbox" value="URL"/>							
+							<textbox  class="input-field" id="linkmug-url-textbox" />																	
+        				</row>
+        				<row align="center">
+        					<label class="link-label" control="linkmug-url-title" value="&linkmugmug.sendtitle;"/>        					
+        					<textbox  class="input-field" id="linkmug-url-title" /> 
+        					       					   				
+        				</row>
+        				<row align="center" >
+        					<label class="link-label" control="linkmug-url-desc" value="&linkmugmug.desc;"/>        					
+        					<textbox  class="input-field" id="linkmug-url-desc" multiline="true" rows="2" />
+        					        					   				
+        				</row>        				
+						<row align="center" >
+							<label class="link-label" control="linkmug-tags-textbox" value="&linkmugmug.tags;"/>
+                            <vbox>
+							  <textbox  class="input-field" id="linkmug-tags-textbox" />
+                              <label class="link-label-mini"  value="&linkmugmug.sep;"/>
+			                </vbox>
+						</row>
+        				<row align="center">        					
+        					<hbox align="start" pack="center">
+        					  <label class="link-label" value="&linkmugmug.postlevel;"/>
+        					  <label id="postlevel-info" value="(?)"
+  		                        class="text-link"
+        	                    onclick="openURL(event.target.getAttribute('href'));"/>
+        					</hbox>        					
+        					<radiogroup id="post-level-group" orient="horizontal" onselect="Linkmug_SendMug.updatePostLevel();" >
+        							<radio label="&linkmugmug.postpublic;" selected="true" tooltiptext="&linkmugmug.publictooltip;"/>
+        							<radio label="&linkmugmug.postmug;" tooltiptext="&linkmugmug.mugtooltip;"/>
+        							<radio label="&linkmugmug.postprivate;" tooltiptext="&linkmugmug.privatetooltip;"/>
+        					</radiogroup>        							        					
+						</row>      							
+    				</rows>
+				</grid>				
+			  </groupbox>
+			</vbox>
+			
+			<vbox flex="1" id="send-msg-vbox" align="center" pack="center">
+			  <groupbox id="send-msg-gbox" flex="1">
+				<caption>
+					<image id="linkmug-msg-send-img" />
+					<label id="linkmug-msg-label">
+						&linkmugmug.sendmsg;
+					</label>
+				</caption>				
+				<vbox>					
+					<textbox id="linkmug-attach-message" multiline="true" rows="2" flex="1" />
+					<checkbox 
+								id="linkmug-just-send-message" 
+								checked="false" 
+								label="&linkmugmug.justsendmsg;"
+								onclick="Linkmug_SendMug.switchLinkMsg();" />					
+				</vbox>
+			  </groupbox>
+			</vbox>
+			
+	</vbox>
+</wizardpage>
+<wizardpage >
+	<vbox flex="1">	    
+	    <groupbox>
+				<caption>
+					<image id="linkmug-receiver-wizard-img" />
+			        <label id="linkmug-receiver-label">
+				           &linkmugmug.selectmugs;
+			        </label>
+				</caption>	
+	    		
+		<listbox id="mugs_list_box">
+			<listhead>
+				<listheader label="&linkmugmug.mugname;"/>
+				<listheader label="&linkmugmug.mugowner;"/>
+				<listheader label="&linkmugmug.mugfeature;"/>
+				<listheader label="&linkmugmug.mugusernum;"/>
+			</listhead>
+			<listcols>
+				<listcol flex="1"/>
+				<listcol/>
+				<listcol/>
+				<listcol/>
+			</listcols>			
+		</listbox>
+		<hbox align="center" pack="center">
+	    	<label id="error_message" value=""/>		    	
+		</hbox> 
+		</groupbox>
+		<vbox align="center" pack="center">
+		  <description id="desc_selectmug">
+		     &linkmugmug.intro_selectmug;
+		  </description>        
+		</vbox>                   
+                <hbox align="center" pack="center">
+                  <button
+					id="select-all-mugs"					
+					label="&linkmugmug.selectallmug;"										
+					oncommand="Linkmug_SendMug.selectAll();" />
+				  <button
+					id="select-none-mugs"					
+					label="&linkmugmug.selectnonemug;"										
+					oncommand="Linkmug_SendMug.selectNone();" />	                  
+                </hbox>
+                <hbox align="center" pack="center">
+                  <label>&linkmugmug.you-selected;</label><label id="selected_mug_num" value=""/><label>&linkmugmug.mugs;</label>
+                </hbox>
+	</vbox>
+</wizardpage>	
+</wizard>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/sendbuddy.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/sendbuddy.dtd">
+<dialog id="linkmug-send-buddy"  
+     title="&linkmugbuddy.title;"                      
+     height="610"
+     buttons="cancel,accept"
+	 buttonlabelaccept="&linkmugbuddy.send;" 
+	 buttonlabelcancel="&linkmugbuddy.cancel;"	
+	 ondialogaccept="return Linkmug_SendBuddy.doSend();"	
+	 ondialogcancel="return Linkmug_SendBuddy.doCancel();"	
+	 buttonpack="center"
+	 buttonalign="center"      
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/md5.js" />  
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/uuid.js"/>
+   <script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+   <script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />   
+   <script type="application/x-javascript" src="sendbuddy.js" />
+   <stringbundleset id="stringbundleset">
+    <stringbundle id="sendbuddy-strings" src="chrome://linkmug/locale/sendbuddy.properties"/>
+  </stringbundleset>
+	 
+	<vbox align="center" pack="center" flex="1">
+	      <hbox  align="center" pack="center">
+	         <label id="send-to" value="&linkmugbuddy.sendto;"/>	         
+	         <label id="send-to-who" />   
+	      </hbox>
+	      
+	      <vbox flex="1" id="send-link-vbox" align="center" pack="center">	        	
+			 <groupbox id= "link-send-gbox" flex="1" >
+			    <caption>
+					<image id="linkmug-link-send-img" />
+					<label id="linkmug-link-label" value="&linkmugbuddy.sendlink;" />					
+				</caption>
+				<grid flex="1">
+					<columns>
+						<column />						
+						<column flex="1"/>	    				
+					</columns>
+					<rows>
+						<row align="center" >
+							<label class="link-label" control="linkmug-url-textbox" value="URL"/>							
+							<textbox  class="input-field" id="linkmug-url-textbox" />																	
+        				</row>
+        				<row align="center">
+        					<label class="link-label" control="linkmug-url-title" value="&linkmugbuddy.sendtitle;"/>        					
+        					<textbox  class="input-field" id="linkmug-url-title" /> 
+        					       					   				
+        				</row>
+        				<row align="center" >
+        					<label class="link-label" control="linkmug-url-desc" value="&linkmugbuddy.desc;"/>        					
+        					<textbox  class="input-field" id="linkmug-url-desc" multiline="true" rows="2" />
+        					        					   				
+        				</row>        				
+						<row align="center" >
+							<label class="link-label" control="linkmug-tags-textbox" value="&linkmugbuddy.tags;"/>
+                              <vbox>
+							    <textbox  class="input-field" id="linkmug-tags-textbox" />
+                                <label class="link-label-mini"  value="&linkmugbuddy.sep;"/>
+			                  </vbox>
+						</row>
+        				      							
+    				</rows>
+				</grid>				
+			  </groupbox>
+			</vbox>
+			
+			<vbox flex="1" id="send-msg-vbox" align="center" pack="center">
+			  <groupbox id="send-msg-gbox" flex="1">
+				<caption>
+					<image id="linkmug-msg-send-img" />
+					<label id="linkmug-msg-label" value="&linkmugbuddy.sendmsg;" />					
+				</caption>				
+				<vbox>					
+					<textbox id="linkmug-attach-message" multiline="true" rows="2" flex="1"/>
+					<checkbox 
+								id="linkmug-just-send-message" 
+								checked="false" 
+								label="&linkmugbuddy.justsendmsg;"
+								onclick="Linkmug_SendBuddy.switchLinkMsg();" />					
+				</vbox>
+			  </groupbox>
+			</vbox>
+			<hbox align="center" pack="center">
+	    	  <label id="error_message" value=""/>		    	
+		    </hbox> 
+	</vbox>
+	
+</dialog>

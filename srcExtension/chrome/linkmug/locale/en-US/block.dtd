@@ -1,0 +1,7 @@
+<!ENTITY block-title		"Linkmug Block User">
+<!ENTITY do-it		        "block"> 
+<!ENTITY block-user		    "Block User ">
+<!ENTITY not-receive		"You will not receive the">
+<!ENTITY s-message		    "'s message any more.">
+<!ENTITY block-sure		    "Are you sure?">
+<!ENTITY block-prompt		"(note:you could re-enable the user in Linkmug site's Blacklist Management)">

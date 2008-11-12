@@ -1,0 +1,25 @@
+<!ENTITY linkmugmug.title "Linkmug Send Wizard">
+<!ENTITY linkmugmug.sendlink "Link to Send">
+<!ENTITY linkmugmug.sendtitle "Title">
+<!ENTITY linkmugmug.desc "Description">
+<!ENTITY linkmugmug.tags "Tags">
+<!ENTITY linkmugmug.sep  "separating multi tags by space,comma or semicolon,multi-word tag must be quoted">
+<!ENTITY linkmugmug.postlevel  "Post Level">
+<!ENTITY linkmugmug.postpublic  "Public">
+<!ENTITY linkmugmug.publictooltip  "In addition your selected Mugs,your posted link will also be saved on Linkmug site">
+<!ENTITY linkmugmug.postmug  "Mug">
+<!ENTITY linkmugmug.mugtooltip  "Your posted link will just be saved in your selected Mugs">
+<!ENTITY linkmugmug.postprivate  "Private">
+<!ENTITY linkmugmug.privatetooltip  "Your posted link will just be saved to your personal stuff of Linkmug">
+<!ENTITY linkmugmug.sendmsg "Message to Send">
+<!ENTITY linkmugmug.justsendmsg "Just send message, not current link">
+<!ENTITY linkmugmug.selectmugs "Please select the  Mugs which you will posted to">
+<!ENTITY linkmugmug.intro_selectmug "When you post a link at private or public level,you could also select none of the Mugs, the link you post will just be send to your personal stuff(Private Level) or the Linkmug public area(Public Level).">
+<!ENTITY linkmugmug.mugname "Mug Name">
+<!ENTITY linkmugmug.mugowner "Mug Owner">
+<!ENTITY linkmugmug.mugfeature "Mug Feature">
+<!ENTITY linkmugmug.mugusernum "User Number">
+<!ENTITY linkmugmug.you-selected "You selected">
+<!ENTITY linkmugmug.mugs "Mugs">
+<!ENTITY linkmugmug.selectallmug "Select All">
+<!ENTITY linkmugmug.selectnonemug "Unselect All">

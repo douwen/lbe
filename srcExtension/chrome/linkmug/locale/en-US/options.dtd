@@ -1,0 +1,17 @@
+<!ENTITY Linkmug.Preference		"Linkmug Preference">
+<!ENTITY Basic		            "Basic">
+<!ENTITY Advanced		        "Advanced">
+<!ENTITY Auto.open		        "Auto open received link to a new browser tab">
+<!ENTITY Msg.mugsend		    "When open send to Mug,show send message UI firstly">
+<!ENTITY Msg.buddysend		    "When open send to Buddy,show send message UI firstly">
+<!ENTITY Browser.attention		"Get browser focused when link and message come">
+<!ENTITY Browser.directshowbar	"Show Linkmug Bar directly when message come">
+<!ENTITY justfor-experienced	"Just for experienced user!">
+<!ENTITY second	                "Seconds">
+<!ENTITY sync-interval		    "Synchronizing Interval">
+<!ENTITY sendcheck-interval		"Message send Interval">
+<!ENTITY timeout-threshold		"Network Timeout Treshold">
+<!ENTITY timeout-threshold-hint	"0 means use system default timeout">
+<!ENTITY Default		        "Default">
+<!ENTITY Apply		            "Apply">
+<!ENTITY Cancel		            "Cancel">

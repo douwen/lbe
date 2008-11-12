@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/comment.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/comment.dtd">
+<dialog 	
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="Linkmug_Comment.onLoad();"
+	id="linkmug-comment-dlg"
+	title="&LinkmugComment;" 
+	buttons="cancel,accept"
+	buttonlabelaccept="&postcomment;"	
+	buttonlabelcancel="&cancelpost;"	
+	ondialogaccept="return Linkmug_Comment.doComment();"	
+	buttonpack="center"
+	buttonalign="center" >
+        
+
+
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />
+<script type="application/x-javascript" src="comment.js" />
+<stringbundleset id="stringbundleset">
+    <stringbundle id="linkmug-comment-strings" src="chrome://linkmug/locale/comment.properties"/>
+  </stringbundleset>
+<dialogheader title="&comment-link;" description=""/>
+<vbox>
+    <hbox align="center" pack="center" flex="1">
+     <textbox  class="input-comment" 
+              id="linkmug-comment-content" 
+              multiline="true" 
+              rows="5" 
+              flex="1" />
+    </hbox>          
+    <hbox class="margin-box" align="center" pack="center">	   
+       <label id="comment-status" value="" />       
+    </hbox>  
+</vbox>
+</dialog>

@@ -1,0 +1,6 @@
+<!ENTITY error-title		"Linkmug 错误">
+<!ENTITY ok		            "好的"> 
+<!ENTITY linkmug-error		"Linkmug 出错">
+<!ENTITY server-error		"Linkmug 服务器错误">
+<!ENTITY error-info		    "Linkmug 出现服务端错误">
+<!ENTITY auto-retry		    "linkmug 会自动重试!">

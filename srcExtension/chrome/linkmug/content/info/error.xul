@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/error.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/error.dtd">
+<dialog 
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	onload="window.sizeToContent();"
+	id="linkmug-error-dlg" 
+	title="&error-title;"
+	buttons="accept"
+	buttonlabelaccept="&ok;"	
+	ondialogaccept="return doOK();">
+<script>
+function doOK()
+{  
+  return true;
+}
+</script>
+<dialogheader title="&linkmug-error;" description="&server-error;"/>
+<vbox align="center" pack="center" >
+  <hbox>
+    <image id="linkmug-info" />
+    <description>
+	   &error-info;
+    </description>
+  </hbox>
+  <description>
+	  &auto-retry;
+  </description>
+</vbox>
+
+</dialog>

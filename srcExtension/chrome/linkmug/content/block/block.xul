@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/block.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/block.dtd">
+<dialog 	
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	id="linkmug-block-dlg"
+	title="&block-title;" 
+	buttons="accept,cancel"
+	buttonlabelaccept="&do-it;"	
+	ondialogaccept="return Linkmug_Block.doBlock();"
+	ondialogcancel="return Linkmug_Block.doCancel();"
+	buttonpack="center"
+	buttonalign="center" >
+        
+
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/http.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />
+<script type="application/x-javascript" src="block.js" />
+<dialogheader title="Block User!" description=""/>
+<vbox align="center" pack="center">
+
+    <hbox class="margin-box" align="center" pack="center">	
+       <image id="linkmug-block-img" />
+       <label id="block-sure">&block-sure;</label>
+    </hbox>
+    <hbox class="margin-box" align="center" pack="center">
+    	<label >&not-receive;</label>
+    	<label id="block-username" />
+    	<label >&s-message;</label>
+    </hbox>	    
+    <description id="block-prompt">&block-prompt;</description>       
+</vbox>
+</dialog>

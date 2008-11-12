@@ -1,0 +1,6 @@
+<!ENTITY error-title		"Linkmug Error">
+<!ENTITY ok		            "Ok"> 
+<!ENTITY linkmug-error		"Linkmug-error">
+<!ENTITY server-error		"Linkmug Server Error">
+<!ENTITY error-info		    "Linkmug encounter some server error">
+<!ENTITY auto-retry		    "Linkmug will auto retry later!">

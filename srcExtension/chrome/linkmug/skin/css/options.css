@@ -1,0 +1,40 @@
+label#err-message
+{ 
+	color:#ed0c0c;
+	font-size:1.2em;
+	font-weight:bold;
+     
+}
+textbox.time-value
+{
+	max-width: 4em;
+}
+.prompt-text
+{
+	color:#313335;
+}
+caption
+{
+	font-size:1.1em;
+	font-weight:bold;	
+}
+.prompt-mini
+{
+	font-size:0.7em;
+	color:#1086f4;
+}
+.prompt-second
+{
+	color:#ea8e0a;
+	font-weight:bold;
+	font-size:0.8em;
+}
+image#linkmug-pref-img
+{
+	list-style-image: url("chrome://linkmug/skin/images/options.png");
+}
+tab.tabheader
+{
+	color:#055cac;
+	font-weight:bold;
+}

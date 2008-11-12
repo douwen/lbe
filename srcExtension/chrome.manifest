@@ -1,0 +1,7 @@
+content linkmug                                         chrome/linkmug/content/
+locale	linkmug	en-US	                                chrome/linkmug/locale/en-US/
+locale	linkmug	zh-CN	                                chrome/linkmug/locale/zh-CN/
+skin	linkmug	classic/1.0	                            chrome/linkmug/skin/
+
+overlay	chrome://browser/content/browser.xul	        chrome://linkmug/content/linkmug.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://linkmug/skin/css/linkmug.css

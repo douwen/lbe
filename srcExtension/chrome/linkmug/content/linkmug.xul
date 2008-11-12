@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/linkmug.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://linkmug/locale/linkmug.dtd">
+<overlay id="linkmug-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	  
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/md5.js" />
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/http.js" />
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/uuid.js"/>
+  <script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />  
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+  <script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />
+  <script type="application/x-javascript" src="chrome://linkmug/content/linkmug.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="linkmug-strings" src="chrome://linkmug/locale/linkmug.properties"/>
+  </stringbundleset>  
+  
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="linkmug_mug_status"
+    	status="connecting"/>
+    <broadcaster id="linkmug_buddy_status"
+    	status="connecting"/>	    
+  </broadcasterset>
+  
+  <commandset id="mainCommandSet">
+		<command id="linkmug-send-mug-cmd"
+			oncommand="Linkmug.sendLink(event);"/>
+		<command id="linkmug-sendtoallbuddy-cmd"
+			oncommand="Linkmug.sendtoBuddy(null);"/>				
+  </commandset>
+       
+  <toolbox id="navigator-toolbox">
+  	
+     <toolbarpalette id="BrowserToolbarPalette">
+          
+        <toolbarbutton id="linkmug-toolbar-send-button" class="linkmugbutton-1 chromeclass-toolbar-additional"  
+          label="&linkmugToolbar.sharelabel;"
+          tooltiptext="&linkmugToolbar.sharetooltip;"
+          command="linkmug-send-mug-cmd" 
+          insertbefore="urlbar-container" 
+          context="linkmug-sendmug-popup" >
+              <observes element="linkmug_mug_status" attribute="status"/>    
+        </toolbarbutton> 
+        <toolbarbutton id="linkmug-toolbar-buddy-button" class="linkmugbutton-1 chromeclass-toolbar-additional"  
+          label="&linkmugToolbar.friendlabel;"
+          tooltiptext="&linkmugToolbar.buddytooltip;"
+          command="linkmug-sendtoallbuddy-cmd" 
+          insertbefore="urlbar-container" 
+          context="linkmug-changestatus-popup" 
+          type="menu-button">
+              <observes element="linkmug_buddy_status" attribute="status"/> 
+              <menupopup>
+              <arrowscrollbox id="linkmug-buddy-list" orient="vertical" flex="1" />
+              </menupopup>
+        </toolbarbutton>
+  
+    </toolbarpalette>
+    
+    
+    <toolbar id="linkmug-bar"            
+             class="chromeclass-toolbar"
+             context="linkmug-msglist-bar" 
+             insertbefore="mainPopupSet"
+             hidden="true">
+      <toolbaritem  id="linkmugbar-toolbaritem" flex="1">
+      	<hbox flex="1">
+           <hbox align="center" pack="start">
+            <hbox class="linkmugbar-syscmd" align="center" pack="start"> 
+             <toolbarbutton id="linkmugbar-grippy-hide"
+                     tooltiptext="&linkmugToolbar.grippy-hide;"
+                     image="chrome://linkmug/skin/images/gripy-hide.png"                    
+                     oncommand="Linkmug.hideBar();" />             
+             <toolbarbutton id="linkmugbar-grippy-last"
+                     tooltiptext="&linkmugToolbar.grippy-last;"
+                     image="chrome://linkmug/skin/images/gripy-last.png"                    
+                     oncommand="Linkmug.lastItem();" />             
+             <toolbarbutton id="linkmugbar-grippy-next"
+                     tooltiptext="&linkmugToolbar.grippy-next;"
+                     image="chrome://linkmug/skin/images/gripy-next.png"                    
+                     oncommand="Linkmug.nextItem();" />  
+             <toolbarbutton id="linkmugbar-clearall-msg"
+                     tooltiptext="&linkmugToolbar.clearall;"
+                     image="chrome://linkmug/skin/images/trash.png"                    
+                     oncommand="Linkmug.clearAllMessage();" />                                
+            </hbox>
+           </hbox>     	
+      	   <deck id="linkmugbar-deckbox"  flex="2">
+            
+            <hbox id="linkmugbar-publink" flex="1" align="center">
+      	   
+      	   	  <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	        <toolbarbutton id="linkmugbar-publink-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                    
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-publink-check"
+                     tooltiptext="&see-it;"
+                     image="chrome://linkmug/skin/images/go.png"                    
+                     oncommand="Linkmug.gotoTarget(false);" />
+                <toolbarbutton id="linkmugbar-publink-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(false);" />
+                <toolbarbutton id="linkmugbar-publink-replyall"
+                     tooltiptext="&reply-all;"
+                     image="chrome://linkmug/skin/images/replyall.png"                    
+                     oncommand="Linkmug.replyAll(false);" />     
+                <toolbarbutton id="linkmugbar-publink-addcomment"
+                     tooltiptext="&addcomment;"
+                     image="chrome://linkmug/skin/images/comment.png"                     
+                     oncommand="Linkmug.addComment(true);" />     
+                <toolbarbutton id="linkmugbar-publink-addbuddy" 
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />     
+                <toolbarbutton id="linkmugbar-publink-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                     
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox> 
+      	     <hbox id="linkmugbar-publink-body" flex="1" align="center">      	       
+      	       <label class="linkmug-sender-name" id="linkmugbar-publink-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-publink-time"/>
+      	       <label value="&send-you-link-with-title;"/>
+      	       <label class="linkmug-link-action" id="linkmugbar-publink-title" 
+      	       	   onclick="Linkmug.gotoTarget(false);"/>
+      	       <label id="linkmugbar-publink-said" />      	       
+               <description class="linkmug-message-content" id="linkmugbar-publink-saidwhat" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>		
+      	 
+      	 <hbox id="linkmugbar-muglink" flex="1" align="center">
+      	   
+      	   	  <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	        <toolbarbutton id="linkmugbar-muglink-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                    
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-muglink-check"
+                     tooltiptext="&see-it;"
+                     image="chrome://linkmug/skin/images/go.png"                    
+                     oncommand="Linkmug.gotoTarget(false);" />
+                <toolbarbutton id="linkmugbar-muglink-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(false);" />
+                <toolbarbutton id="linkmugbar-muglink-replyall"
+                     tooltiptext="&reply-all;"
+                     image="chrome://linkmug/skin/images/replyall.png"                    
+                     oncommand="Linkmug.replyAll(false);" />     
+                <toolbarbutton id="linkmugbar-muglink-addcomment"
+                     tooltiptext="&addcomment;"
+                     image="chrome://linkmug/skin/images/comment.png"                     
+                     oncommand="Linkmug.addComment(false);" />     
+                <toolbarbutton id="linkmugbar-muglink-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />     
+                <toolbarbutton id="linkmugbar-muglink-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                     
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox> 
+      	     <hbox id="linkmugbar-muglink-body" flex="1" align="center">      	       
+      	       <label class="linkmug-sender-name" id="linkmugbar-muglink-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-muglink-time"/>
+      	       <label value="&send-you-link-with-title;"/>
+      	       <label class="linkmug-link-action" id="linkmugbar-muglink-title" 
+      	       	   onclick="Linkmug.gotoTarget(false);"/>
+      	       <label id="linkmugbar-muglink-said" />      	       
+               <description class="linkmug-message-content" id="linkmugbar-muglink-saidwhat" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-pvtlink" flex="1" align="center">
+      	   
+      	   	  <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	        <toolbarbutton id="linkmugbar-pvtlink-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                    
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-pvtlink-check"
+                     tooltiptext="&see-it;"
+                     image="chrome://linkmug/skin/images/go.png"                    
+                     oncommand="Linkmug.gotoTarget(false);" />
+                <toolbarbutton id="linkmugbar-pvtlink-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(false);" />                
+                <toolbarbutton id="linkmugbar-pvtlink-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />     
+                <toolbarbutton id="linkmugbar-pvtlink-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                     
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox> 
+      	     <hbox id="linkmugbar-pvtlink-body" flex="1" align="center">      	       
+      	       <label class="linkmug-sender-name" id="linkmugbar-pvtlink-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-pvtlink-time"/>
+      	       <label value="&send-you-link-with-title;"/>
+      	       <label class="linkmug-link-action" id="linkmugbar-pvtlink-title" 
+      	       	   onclick="Linkmug.gotoTarget(false);"/>
+      	       <label id="linkmugbar-pvtlink-said" />      	       
+               <description class="linkmug-message-content" id="linkmugbar-pvtlink-saidwhat" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 	
+      	 <hbox id="linkmugbar-mugmessage" flex="1" align="center">
+      	        	           	     
+      	     <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	     	<toolbarbutton id="linkmugbar-mugmessage-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                     
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-mugmessage-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(true);" />
+                <toolbarbutton id="linkmugbar-mugmessage-replyall"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/replyall.png"                    
+                     oncommand="Linkmug.replyAll(true);" />     
+      	        <toolbarbutton id="linkmugbar-mugmessage-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />          
+      	        <toolbarbutton id="linkmugbar-mugmessage-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                    
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox>
+      	     
+      	     <hbox id="linkmugbar-mugmessage-body" flex="1" align="center" >               
+      	       <label class="linkmug-sender-name" id="linkmugbar-mugmessage-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-mugmessage-time"/>      	       
+      	       <label value="&said;"/>
+               <description class="linkmug-message-content" id="linkmugbar-mugmessage-content" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-buddylink" flex="1" align="center">
+      	   
+      	   	  <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	        <toolbarbutton id="linkmugbar-buddylink-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                    
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-buddylink-check"
+                     tooltiptext="&see-it;"
+                     image="chrome://linkmug/skin/images/go.png"                    
+                     oncommand="Linkmug.gotoTarget(false);" />
+                <toolbarbutton id="linkmugbar-buddylink-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(false);" />
+                <toolbarbutton id="linkmugbar-buddylink-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />
+                <toolbarbutton id="linkmugbar-buddylink-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                     
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox> 
+      	     <hbox id="linkmugbar-buddylink-body" flex="1" align="center">      	       
+      	       <label class="linkmug-sender-name" id="linkmugbar-buddylink-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-buddylink-time"/>
+      	       <label value="&send-you-link-with-title;"/>
+      	       <label class="linkmug-link-action" id="linkmugbar-buddylink-title" 
+      	       	   onclick="Linkmug.gotoTarget(false);"/>
+      	       <label id="linkmugbar-buddylink-said" />      	       
+               <description class="linkmug-message-content" id="linkmugbar-buddylink-saidwhat" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-buddymessage" flex="1" align="center">
+      	        	           	     
+      	     <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	     	<toolbarbutton id="linkmugbar-buddymessage-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                     
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-buddymessage-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(true);" />
+      	        <toolbarbutton id="linkmugbar-buddymessage-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />          
+      	        <toolbarbutton id="linkmugbar-buddymessage-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                    
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox>
+      	     
+      	     <hbox id="linkmugbar-buddymessage-body" flex="1" align="center" >               
+      	       <label class="linkmug-sender-name" id="linkmugbar-buddymessage-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-buddymessage-time"/>      	       
+      	       <label value="&said;"/>
+               <description class="linkmug-message-content" id="linkmugbar-buddymessage-content" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-reply" flex="1" align="center">
+      	        	           	     
+      	     <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	     	<toolbarbutton id="linkmugbar-reply-block"
+                     tooltiptext="&block-sender;"
+                     image="chrome://linkmug/skin/images/block.png"                     
+                     oncommand="Linkmug.blockUser();" />
+                <toolbarbutton id="linkmugbar-reply-reply"
+                     tooltiptext="&reply-sender;"
+                     image="chrome://linkmug/skin/images/reply.png"                    
+                     oncommand="Linkmug.replyUser(true);" />
+      	        <toolbarbutton id="linkmugbar-reply-addbuddy"
+                     tooltiptext="&addfriend;"
+                     image="chrome://linkmug/skin/images/addbuddy.png"                     
+                     oncommand="Linkmug.addBuddy();" />          
+      	        <toolbarbutton id="linkmugbar-reply-remove"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                    
+                     oncommand="Linkmug.removeMsg();" />
+                
+      	     </hbox>
+      	     
+      	     <hbox id="linkmugbar-reply-body" flex="1" align="center" >
+               <label class="linkmug-quote-reply" id="linkmug-reply-reply"/>
+      	       <label class="linkmug-quote-message" id="linkmugbar-reply-quote"/>
+      	       <label class="linkmug-sender-name" id="linkmugbar-reply-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-reply-time"/>      	       
+      	       <label value="&said;"/>
+               <description class="linkmug-message-content" id="linkmugbar-reply-content" flex="1">                 
+               </description>  	       
+      	     </hbox>      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-invite" flex="1" align="center">
+      	   <hbox class="linkmugbar-cmd" align="center" pack="start"> 
+      	     
+      	     <toolbarbutton id="linkmugbar-invite-check"
+                     tooltiptext="&invite-check;"
+                     image="chrome://linkmug/skin/images/go.png"                     
+                     oncommand="Linkmug.gotoTarget(true);" />
+      	     </hbox>
+      	     <hbox id="linkmugbar-invite-body" flex="1" align="center">
+      	       
+      	       <label class="linkmug-sender-name" id="linkmugbar-invite-who"/>
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-invite-time"/>
+      	       <label  class="linkmug-link-action" 
+      	               value="&join-mug;" 
+      	               onclick="Linkmug.gotoTarget(true);"/>      	       
+      	       <label  id="linkmugbar-invite-mug" />
+      	     </hbox>
+      	           	   
+      	 </hbox>
+      	 
+      	 <hbox id="linkmugbar-info" flex="1" align="center">
+      	   
+      	     <hbox class="linkmugbar-cmd" align="center" pack="start">
+      	     <toolbarbutton id="linkmugbar-info-close"
+                     tooltiptext="&remove;"
+                     image="chrome://linkmug/skin/images/close.png"                    
+                     oncommand="Linkmug.removeMsg();" />
+      	     </hbox>
+      	     <hbox id="linkmugbar-info-body" flex="1" align="center">
+      	             	      
+      	       <label value="&at-time;"/>
+      	       <label class="linkmug-action-time" id="linkmugbar-info-time" />      	       
+               <label class="linkmug-link-action" id="linkmugbar-info-title" 
+      	       	   onclick="Linkmug.gotoTarget(true);"/>
+               <description class="linkmug-message-content" id="linkmugbar-info-message" flex="1">                 
+               </description>  	       
+      	     </hbox>      	     
+      	   
+      	 </hbox>      	     	       	       	       	       	 
+      	</deck>
+      	
+      	</hbox>
+      </toolbaritem>
+         
+      
+    </toolbar> 
+ </toolbox>
+ <popupset id="mainPopupSet">
+		
+		<popup id="linkmug-sendmug-popup" noautohide="true" position="after_start">
+			<menuitem id="linkmug-showbar-menuitem"                                            	
+                	  oncommand="Linkmug.showBar();"
+                	  disabled="true">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-showbar-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.showbar;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuseparator/>
+			<menuitem id="linkmug-mystuff"                                            	 
+                	  oncommand="Linkmug.goMyStuff();">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-gomystuff-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.mystuff;" />
+      			</hbox>     
+   			</menuitem>	
+   			<menuitem id="linkmug-home"                                            	 
+                	  oncommand="Linkmug.goHome();">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-gohome-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.home;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuitem id="linkmug-writer"                                            	
+                	  oncommand="Linkmug.goWriter();">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-writer-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.wirter;" />
+      			</hbox>     
+   			</menuitem>	
+   			<menuitem id="linkmug-preference"                                            	
+                	  oncommand="Linkmug.setPreference();">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-preference-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.preference;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuitem id="linkmug-about"                                            	 
+                	  oncommand="Linkmug.showAbout();">
+      			<hbox align="center" pack="center">
+      	 			<image id="linkmug-about-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.about;" />
+      			</hbox>     
+   			</menuitem>								
+		</popup>	
+		<!-- preference -->
+		
+		<popup id="linkmug-msglist-bar" noautohide="true" 
+			   onpopupshowing="Linkmug.genPopupMenu();">
+			<menuitem oncommand="Linkmug.clearAllMessage();" >
+      			<hbox class="linkmug-menu-firstitem" align="center" pack="center" flex="1">
+      	 			<image id="linkmug-clearall-img" />
+      	 			<label crop="right"  value="&linkmugToolbar.clearall;" />
+      			</hbox>     
+   			</menuitem>	
+   			<menuseparator/>		
+   			<arrowscrollbox id="linkmug-arrowscrollbox" orient="vertical" flex="1" />            
+		</popup>	
+		
+		<popup id="linkmug-changestatus-popup" 
+		       noautohide="true">
+			<menuitem oncommand="Linkmug.setOnlineStatus('ONLINE');" >
+      			<hbox class="linkmug-changeonline-item" align="center" pack="start" flex="1">
+      	 			<image class="buddy_online" />
+      	 			<label value="&linkmugToolbar.imonline;" />
+      			</hbox>     
+   			</menuitem>	
+   			<menuitem oncommand="Linkmug.setOnlineStatus('OFFLINE');" >
+      			<hbox class="linkmug-changeonline-item" align="center" pack="start" flex="1">
+      	 			<image class="buddy_offline" />
+      	 			<label  value="&linkmugToolbar.imoffline;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuitem oncommand="Linkmug.setOnlineStatus('BUSY');" >
+      			<hbox class="linkmug-changeonline-item" align="center" pack="start" flex="1">
+      	 			<image class="buddy_busy" />
+      	 			<label value="&linkmugToolbar.imbusy;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuitem oncommand="Linkmug.setOnlineStatus('IDLE');" >
+      			<hbox class="linkmug-changeonline-item" align="center" pack="start" flex="1">
+      	 			<image class="buddy_idle" />
+      	 			<label value="&linkmugToolbar.imidle;" />
+      			</hbox>     
+   			</menuitem>
+   			<menuitem oncommand="Linkmug.setOnlineStatus('LEAVE');" >
+      			<hbox class="linkmug-changeonline-item" align="center" pack="start" flex="1">
+      	 			<image class="buddy_leave" />
+      	 			<label value="&linkmugToolbar.imleave;" />
+      			</hbox>     
+   			</menuitem>
+		</popup>
+			
+</popupset>
+ 
+ 
+ 
+ <popup id="contentAreaContextMenu">
+  	
+    <menuitem id="context-linkmug-senditem"               
+              insertafter="context-stop"
+              oncommand="Linkmug.sendItemLink(document.popupNode);">
+      <hbox align="center" pack="center">
+      	 <image id="context-linkmug-senditem-img" />
+      	 <label crop="right"  value="&linkmugToolbar.senditem;" />
+      </hbox>
+      <observes element="linkmug_mug_status" attribute="status"/>
+   </menuitem>
+    <menuitem id="context-linkmug-send"              
+              insertafter="context-stop"
+              command="linkmug-send-mug-cmd">
+      <hbox align="center" pack="center">
+      	 <image id="context-linkmug-send-img" />
+      	 <label crop="right"  value="&linkmugToolbar.sendthis;" />
+      </hbox>
+      <observes element="linkmug_mug_status" attribute="status"/>
+   </menuitem>   
+   <menuseparator insertafter="context-stop"/>
+ </popup>
+ <statusbar id="status-bar">
+        <statusbarpanel	id="linkmug-stbpanel"
+			insertbefore="statusbar-updates"
+            context="linkmug-sendmug-popup"
+            tooltiptext="&linkmug.statusbar;"
+            onclick="if (event.button == 0) Linkmug.sendLink(event);">
+           <image id="linkmug-statusbar-img">
+             <observes element="linkmug_mug_status" attribute="status"/>
+           </image>
+           <label id="linkmug-have-msgs"/>
+	    </statusbarpanel> 
+           
+</statusbar>			  
+</overlay>

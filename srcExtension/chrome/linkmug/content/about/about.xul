@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+    <!ENTITY % aboutDTD SYSTEM "chrome://linkmug/locale/about.dtd">
+    %aboutDTD;
+]>
+
+<window class="dialog"
+	title="&win.title;"
+	onload="sizeToContent();LinkmugAbout.onLoad();"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="about.js" />
+
+<groupbox align="center" orient="horizontal">
+<vbox>
+  <description value="&extName.label;" style="font-weight: bold; font-size: x-large;"/>
+  <description value="&extVersion.label;"/>
+  <spacer style="height:15px"/>
+  <description value="&homepage.label;" style="font-weight: bold;"/>
+  <hbox>
+    <label id="linkmug-homepage" value="&homepageURL.label;"
+  		class="text-link"
+        onclick="Linkmug_Utils.openURL(event.target.getAttribute('href'));"/>
+   <spacer flex="1"/>     	
+  </hbox>
+  <spacer style="height:15px"/>
+  <description value="&developedBy.label;" style="font-weight: bold;"/>
+  <hbox>
+    <label id="mailto-linkmug-author" 
+        value="&author.label;"
+  		class="text-link"
+  		onclick="Linkmug_Utils.openURL(event.target.getAttribute('href'));"/>
+    <spacer flex="1"/>     	
+  </hbox>
+</vbox>
+<image src="chrome://linkmug/skin/images/about.png" style="padding: 0px 5px 0px 5px"/>
+</groupbox>
+
+<box align="right" pack="center" flex="1">
+	<button label="&close.label;" oncommand="window.close();"/>
+</box>
+</window>
+

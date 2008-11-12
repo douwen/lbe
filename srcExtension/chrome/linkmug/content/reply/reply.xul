@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/reply.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/reply.dtd">
+<dialog 	
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	id="linkmug-reply-dlg"
+	title="&reply-title;" 
+	buttons="accept"
+	buttonlabelaccept="&reply-label;"	
+	ondialogaccept="return Linkmug_Reply.doSend();"	
+	buttonpack="center"
+	buttonalign="center" >
+        
+
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/http.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/linkmugclass.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/messagefactory.js" />
+<script type="application/x-javascript" src="reply.js" />
+<stringbundleset id="stringbundleset">
+    <stringbundle id="linkmug-reply-strings" src="chrome://linkmug/locale/reply.properties"/>
+  </stringbundleset>
+<dialogheader title="&reply-head;" description=""/>
+<vbox align="center" pack="center">
+
+    <hbox class="margin-box" align="center" pack="center">	
+       <image id="reply-message-img" />
+       <label id="reply-message-label" value="&reply-to;"/>
+       <label id="message-receiver_label" value=""/>
+    </hbox>
+    <grid  flex="1">
+       <columns>          
+          <column flex="1" />
+       </columns>
+       <rows>
+          <row align="center">             
+             <textbox id="reply-message-textbox" multiline="true" rows="2" cols="30"/> 
+       	  </row>          
+       </rows>
+    </grid>
+    <hbox class="margin-box" align="center" pack="center">	   
+       <label id="reply-status" value="" />       
+    </hbox>        
+</vbox>
+</dialog>

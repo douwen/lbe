@@ -1,0 +1,30 @@
+dialogheader {
+	background-color:#A7CA20;
+}
+
+#linkmug-block-img {
+list-style-image: url("chrome://linkmug/skin/images/info-big.png");
+}
+label#block-sure
+{   
+   font-size:1em;
+   font-weight:bold;
+}
+
+hbox.margin-box{
+	margin:10px;	
+}
+
+label#block-username
+{
+   color:#4b4a4d;
+	font-size:1em;
+	font-weight:bold;
+}
+
+description#block-prompt
+{
+   color:#6f6e72;
+   font-size:0.7em;
+   white-space:-moz-pre-wrap;  
+}

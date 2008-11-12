@@ -1,0 +1,531 @@
+
+#context-linkmug-send[status="login"]
+{
+  color: green; 
+}
+#context-linkmug-send[status="logout"]
+{
+  color: orange;
+}
+#context-linkmug-send[status="error"]
+{
+  color: red;
+}
+#context-linkmug-send[status="disable"]
+{
+  color: gray; 
+}
+#context-linkmug-send[status="timeout"]
+{
+  color: yellow; 
+}
+#context-linkmug-send[status="connecting"]
+{
+  color: blue; 
+}
+
+#context-linkmug-senditem[status="login"]
+{
+  color: green; 
+}
+#context-linkmug-senditem[status="logout"]
+{
+  color: orange;
+}
+#context-linkmug-senditem[status="error"]
+{
+  color: red;
+}
+#context-linkmug-senditem[status="disable"]
+{
+  color: gray; 
+}
+#context-linkmug-senditem[status="timeout"]
+{
+  color: yellow; 
+}
+#context-linkmug-senditem[status="connecting"]
+{
+  color: blue; 
+}
+
+
+
+#linkmug-toolbar-send-button[status="login"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-login.png");
+}
+
+#linkmug-toolbar-send-button[status="logout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-logout.png");
+}
+#linkmug-toolbar-send-button[status="error"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-error.png");
+}
+#linkmug-toolbar-send-button[status="timeout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-timeout.png");    
+}
+#linkmug-toolbar-send-button[status="disable"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-disabled.png");  
+}
+#linkmug-toolbar-send-button[status="connecting"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-connecting.png");  
+}
+#linkmug-toolbar-send-button[status="flashing1"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing1.png");  
+}
+#linkmug-toolbar-send-button[status="flashing2"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing2.png");  
+}
+#linkmug-toolbar-send-button:hover
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-hover.png");
+}
+
+
+[iconsize="small"] #linkmug-toolbar-send-button[status="login"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-login-s.png");
+}
+
+[iconsize="small"] #linkmug-toolbar-send-button[status="logout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-logout-s.png");
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="error"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-error-s.png");
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="timeout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-timeout-s.png");    
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="disable"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-disabled-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="connecting"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-connecting-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="flashing1"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing1-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-send-button[status="flashing2"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing2-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-send-button:hover
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-hover-s.png");
+}
+
+#linkmug-toolbar-send-button[status="hide"]
+{
+  display:none;  
+}
+
+
+
+#linkmug-toolbar-buddy-button[status="login"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-online.png");
+}
+
+#linkmug-toolbar-buddy-button[status="logout"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-offline.png");
+}
+#linkmug-toolbar-buddy-button[status="error"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-error.png");
+}
+#linkmug-toolbar-buddy-button[status="timeout"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-timeout.png");    
+}
+#linkmug-toolbar-buddy-button[status="disable"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-disabled.png");  
+}
+#linkmug-toolbar-buddy-button[status="connecting"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-connecting.png");  
+}
+#linkmug-toolbar-buddy-button[status="flashing1"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-flashing1.png");  
+}
+#linkmug-toolbar-buddy-button[status="flashing2"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-flashing2.png");  
+}
+#linkmug-toolbar-buddy-button[status="online"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-online.png");  
+}
+#linkmug-toolbar-buddy-button[status="offline"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-offline.png");  
+}
+#linkmug-toolbar-buddy-button[status="busy"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-busy.png");  
+}
+#linkmug-toolbar-buddy-button[status="idle"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-idle.png");  
+}
+#linkmug-toolbar-buddy-button[status="leave"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-leave.png");  
+}
+#linkmug-toolbar-buddy-button:hover
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-hover.png");
+}
+
+
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="login"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-online-s.png");
+}
+
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="logout"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-offline-s.png");
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="error"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-error-s.png");
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="timeout"] {
+    list-style-image: url("chrome://linkmug/skin/images/b-timeout-s.png");    
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="disable"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-disabled-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="connecting"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-connecting-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="flashing1"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-flashing1-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="flashing2"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-flashing2-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="online"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-online-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="offline"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-offline-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="busy"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-busy-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="idle"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-idle-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button[status="leave"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-leave-s.png");  
+}
+[iconsize="small"] #linkmug-toolbar-buddy-button:hover
+{
+  list-style-image: url("chrome://linkmug/skin/images/b-hover-s.png");
+}
+
+#linkmug-toolbar-buddy-button[status="hide"]
+{
+  display:none;  
+}
+
+menuitem.buddy-menuitem:hover{
+	background-color:#c5fb52;
+}
+image.buddy_online{
+  list-style-image: url("chrome://linkmug/skin/images/buddy_online.png");
+}
+image.buddy_offline{
+  list-style-image: url("chrome://linkmug/skin/images/buddy_offline.png");
+}
+image.buddy_busy{
+  list-style-image: url("chrome://linkmug/skin/images/buddy_busy.png");
+}
+image.buddy_idle{
+  list-style-image: url("chrome://linkmug/skin/images/buddy_idle.png");
+}
+image.buddy_leave{
+  list-style-image: url("chrome://linkmug/skin/images/buddy_leave.png");
+}
+label.nobuddy{
+	font-size:13px;
+	color:#69696a;
+}
+label.buddyname{
+	font-size:12px;
+	color:#191717;
+}
+label.buddystatus{
+	font-size:10px;
+	color:#797777;
+}
+#context-linkmug-senditem-img {
+list-style-image: url("chrome://linkmug/skin/images/senditem.png");
+}
+#context-linkmug-send-img {
+list-style-image: url("chrome://linkmug/skin/images/sendlink.png");
+}
+#linkmug-about-img {
+list-style-image: url("chrome://linkmug/skin/images/about-info.png");
+}
+#linkmug-preference-img {
+list-style-image: url("chrome://linkmug/skin/images/pref.png");
+}
+#linkmug-gohome-img {
+list-style-image: url("chrome://linkmug/skin/images/home.png");
+}
+#linkmug-writer-img {
+list-style-image: url("chrome://linkmug/skin/images/pen.png");
+}
+#linkmug-gomystuff-img {
+list-style-image: url("chrome://linkmug/skin/images/mystuff.png");
+}
+
+#linkmug-showbar-img {
+list-style-image: url("chrome://linkmug/skin/images/showbar.png");
+}
+#linkmug-hidebar-img {
+list-style-image: url("chrome://linkmug/skin/images/context-hidebar.png");
+}
+notification.linkmug-notification
+{
+	background-color:#343536;
+	color:#fff;
+	border: solid 2px #a1f908;
+	-moz-border-radius: 3px;
+}
+notification.linkmug-notification button{
+	font-size:12px;
+}
+notification.linkmug-notification toolbarbutton.messageCloseButton{
+   display:none;
+}
+notification.linkmug-notification checkbox{ /* Flock added a checkbox to notification*/
+   display:none;
+}
+#linkmugbar-toolbaritem
+{
+   background-color:#939392;
+}
+hbox.linkmugbar-syscmd{
+	background-color:#4a6c8c;
+	color:#fff;
+        margin-left:2px;
+        margin-right:2px;
+	border: solid 1px #656b6b;
+	-moz-border-radius: 4px;	
+}
+hbox.linkmugbar-syscmd toolbarbutton{	
+	color:#fff;		
+}
+hbox.linkmugbar-syscmd toolbarbutton:hover{	
+	color:#000;		
+}
+
+hbox.linkmugbar-cmd{
+	background-color:#3c3c3d;
+	color:#fff;
+    margin-left:0px;
+	border: solid 1px #656b6b;
+	-moz-border-radius: 4px;	
+}
+hbox.linkmugbar-cmd toolbarbutton{	
+	color:#fff;		
+}
+hbox.linkmugbar-cmd toolbarbutton:hover{	
+	color:#000;		
+}
+hbox#linkmugbar-publink
+{
+	background-color:#a4f43c;
+   -moz-border-radius: 4px;
+}
+hbox#linkmugbar-muglink
+{
+	background-color:#b5a204;
+   -moz-border-radius: 4px;
+}
+hbox#linkmugbar-pvtlink
+{
+	background-color:#0c8a0f;
+   -moz-border-radius: 4px;
+}
+hbox#linkmugbar-buddylink
+{
+	background-color:#a4a03b;
+   -moz-border-radius: 4px;
+}
+hbox#linkmugbar-mugmessage
+{
+   background-color:#efb84f; 
+   -moz-border-radius: 4px;    
+}
+hbox#linkmugbar-buddymessage
+{
+   background-color:#bc913f; 
+   -moz-border-radius: 4px;    
+}
+hbox#linkmugbar-reply
+{
+   background-color:#fb8e19; 
+   -moz-border-radius: 4px;    
+}
+hbox#linkmugbar-invite
+{
+	background-color:#c796f4;
+   -moz-border-radius: 4px;
+}
+
+hbox#linkmugbar-info
+{
+	background-color:#5a95ed;
+   -moz-border-radius: 4px;
+}
+
+label.linkmug-link-action
+{
+	color:blue;
+	font-weight:bold;	
+}
+
+label.linkmug-link-action:hover
+{
+	cursor:pointer;	
+	background-color:#accf87;
+}
+description.linkmug-message-content
+{
+	color:#3e3d41;
+	font-weight:bold;
+}
+label.linkmug-sender-name
+{
+	color:#634348;
+	font-weight:bold;
+}
+label.linkmug-action-time
+{
+	color:#7e8485;
+	font-size:0.8em;
+}
+label.linkmug-quote-reply
+{
+	color:#6e8485;
+	font-size:0.9em;
+        font-weight:bold;
+}
+label.linkmug-quote-message
+{
+	color:#7e8485;
+	font-size:0.8em;
+}
+image.link
+{		
+	list-style-image: url("chrome://linkmug/skin/images/link.png");	
+}
+image.message
+{		
+	list-style-image: url("chrome://linkmug/skin/images/message.png");	
+}
+image.invite
+{		
+	list-style-image: url("chrome://linkmug/skin/images/join.png");	
+}
+image.info
+{		
+	list-style-image: url("chrome://linkmug/skin/images/info.png");	
+}
+image.error
+{		
+	list-style-image: url("chrome://linkmug/skin/images/bug.png");	
+}
+
+hbox.menuitem
+{
+	background-color:#464444;
+   -moz-border-radius: 4px;    
+}
+label.the_sender
+{
+	color:#d7cb09;
+    font-size: 0.8em;
+    
+}
+label.abrv-info
+{
+	color:#e2e5f6;
+    font-size: 0.9em;
+    
+}
+arrowscrollbox#linkmug-arrowscrollbox
+{
+	background-color:#9ba9a3;   
+	max-width:25em;
+	max-height:12em;	
+}
+image#linkmug-clearall-img
+{		
+	list-style-image: url("chrome://linkmug/skin/images/clearall.png");	
+}
+hbox.linkmug-menu-firstitem
+{
+	background-color:#c4c6fd;
+	-moz-border-radius: 4px;
+}
+statusbarpanel#linkmug-stbpanel{
+   cursor: pointer;  
+}	
+label#linkmug-have-msgs {
+  
+  color:#0781f3;
+  font-size:12px;
+}
+#linkmug-statusbar-img {
+    list-style-image: url("chrome://linkmug/skin/images/s-login-s.png");
+    padding-right: 3px;     
+}
+#linkmug-statusbar-img[status="login"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-login-s.png");
+}
+
+#linkmug-statusbar-img[status="logout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-logout-s.png");
+}
+#linkmug-statusbar-img[status="error"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-error-s.png");
+}
+#linkmug-statusbar-img[status="timeout"] {
+    list-style-image: url("chrome://linkmug/skin/images/s-timeout-s.png");    
+}
+#linkmug-statusbar-img[status="disable"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-disabled-s.png");  
+}
+#linkmug-statusbar-img[status="connecting"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-connecting-s.png");  
+}
+#linkmug-statusbar-img[status="flashing1"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing1-s.png");  
+}
+#linkmug-statusbar-img[status="flashing2"]
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-flashing2-s.png");  
+}
+#linkmug-statusbar-img:hover
+{
+  list-style-image: url("chrome://linkmug/skin/images/s-hover-s.png");
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/addbuddy.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://linkmug/locale/addbuddy.dtd">
+<dialog 	
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	id="linkmug-addbuddy-dlg"
+	title="&add-buddy-title;" 
+	buttons="accept,cancel"
+	buttonlabelaccept="&add-it;"	
+	ondialogaccept="return Linkmug_AddBuddy.doAdd();"
+	ondialogcancel="return Linkmug_AddBuddy.doCancel();"
+	buttonpack="center"
+	buttonalign="center" >
+
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="addbuddy.js" />
+<dialogheader title="&add-buddy;" description=""/>
+<vbox align="center" pack="center">
+    <hbox class="margin-box" align="center" pack="center">	       
+       <label class="prompt">&will-add;</label>
+       <label id="buddy-name" />
+       <label class="prompt">&to-frendlist;</label>
+    </hbox>
+    <hbox class="margin-box" align="center" pack="center">
+    	<label class="prompt">&add-sure;</label>    	
+    </hbox>	        
+</vbox>
+</dialog>

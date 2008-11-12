@@ -1,0 +1,6 @@
+<!ENTITY block-title		"Linkmug-阻止用户">
+<!ENTITY do-it		        "屏蔽"> 
+<!ENTITY not-receive		"您将不能收到">
+<!ENTITY s-message		    "的信息.">
+<!ENTITY block-sure		    "是否确定?">
+<!ENTITY block-prompt		"(注:您可在Linkmug站点的Blacklist管理中重新取消屏蔽)">

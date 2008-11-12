@@ -1,0 +1,8 @@
+<!ENTITY win.title		"About Linkmug Extension">
+<!ENTITY extName.label		"Linkmug">
+<!ENTITY extVersion.label	"Version 0.2.0.5.20080530 - Copyright (c) 2008">
+<!ENTITY developedBy.label	"Developed By">
+<!ENTITY author.label		"Dou Wen">
+<!ENTITY homepage.label		"Home Page">
+<!ENTITY homepageURL.label	"Linkmug Home Page">
+<!ENTITY close.label		"Close">

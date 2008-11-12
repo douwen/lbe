@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://linkmug/skin/css/options.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://linkmug/locale/options.dtd">
+<window title="&Linkmug.Preference;"
+	onload="sizeToContent();Linkmug_Option.onLoad();"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
+        
+	
+<script type="application/x-javascript" src="chrome://linkmug/content/jslib/utils.js" />
+<script type="application/x-javascript" src="chrome://linkmug/content/config.js" />
+<script type="application/x-javascript" src="options.js" />
+<stringbundleset id="stringbundleset">
+    <stringbundle id="linkmug-options-strings" src="chrome://linkmug/locale/options.properties"/>
+</stringbundleset>
+<vbox flex="1">
+	<hbox align="center" pack="center">
+		<image id="linkmug-pref-img" />
+	</hbox>
+<tabbox flex="1">
+	<tabs>
+		<tab class="tabheader" label="&Basic;"/>
+		<tab class="tabheader" label="&Advanced;"/>		
+	</tabs>
+	<tabpanels>
+		<tabpanel id="link-process">
+			<vbox>
+				<checkbox 
+					id="linkmug-autopen-checkbox"
+					class="prompt-text"
+					checked="false" 
+					label="&Auto.open;"/>
+				<checkbox 
+					id="linkmug-msgmugsend-checkbox"
+					class="prompt-text"
+					checked="false" 
+					label="&Msg.mugsend;"/>
+				<checkbox 
+					id="linkmug-msgbuddysend-checkbox"
+					class="prompt-text"
+					checked="true" 
+					label="&Msg.buddysend;"/>	
+                <checkbox 
+					id="linkmug-attention-checkbox"
+					class="prompt-text"
+					checked="true" 
+					label="&Browser.attention;"/>
+                <checkbox 
+					id="linkmug-showbardirect-checkbox"
+					class="prompt-text"
+					checked="true" 
+					label="&Browser.directshowbar;"/>			
+			</vbox>
+		</tabpanel>
+		<tabpanel id="linkmug-advanced-option">
+		   <groupbox>
+				<caption label="&justfor-experienced;" />
+		  	  <grid flex="1">
+					<columns>
+						<column flex="1"/>
+						<column />
+						<column />	    				
+					</columns>
+					<rows>
+						<row align="center" >
+							<label class="prompt-text" value="&sync-interval;" />
+					        <textbox id="sync-value"  class="time-value" type="number" />
+					        <label class="prompt-second" value="&second;" />											
+        				</row>
+        				<row align="center" >
+							<label class="prompt-text" value="&sendcheck-interval;" />
+					        <textbox id="sendcheck-interval" class="time-value" type="number" />
+					        <label class="prompt-second" value="&second;" />											
+        				</row>
+        				<row align="center" >
+						   <hbox align="center" pack="center">	
+				  	          <vbox>
+					             <label class="prompt-text" value="&timeout-threshold;" />
+					             <label class="prompt-mini" value="&timeout-threshold-hint;" />
+					          </vbox>	
+					       </hbox>
+					       <textbox id="timeout-threshold" class="time-value" type="number" />
+					       <label class="prompt-second" value="&second;" />				  													
+        				</row>
+					</rows>
+		  	    </grid>
+		   </groupbox>		  			  			  	
+		</tabpanel>		
+	</tabpanels>
+</tabbox>
+	<hbox  align="center" pack="center">
+		<label id="err-message" value="" />		
+	</hbox>
+	<hbox  align="center" pack="center">		
+		<button label="&Default;" oncommand="Linkmug_Option.optionDefault();"/>
+		<button label="&Apply;" oncommand="Linkmug_Option.optionApply();"/>
+		<button label="&Cancel;" oncommand="setTimeout('window.close()', 0);"/>
+	</hbox>
+</vbox>
+</window>
+

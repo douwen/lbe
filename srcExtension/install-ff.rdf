@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:aboutURL="chrome://linkmug/content/about/about.xul"
+                   em:creator="Dou Wen"
+                   em:description="Linkmug Browser Extension connects browsers of Linkmug users together, share links and message realtime at browser level."
+                   em:homepageURL="http://www.linkmug.com"
+                   em:iconURL="chrome://linkmug/skin/images/logo.png"
+                   em:id="{afe26691-cc1e-4c7d-b508-1eeb908bcae8}"
+                   em:name="Linkmug"
+                   em:version="0.2.0.5.20080530"
+                   em:updateURL="http://www.linkmug.com/lbe/update/update.rdf"
+                   em:type="2"
+                   em:optionsURL="chrome://linkmug/content/option/options.xul"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDgA/Z91uHgJL0DVZkegwNkHcl/NZ/qTbyWFvwEi58J9x7a9yeQpiQIYvehFvf2mCQFxl3uPiTBMbFzvJ2TMrCU5zpVU1AtSsMDnH0QWPDO2KnRUb4SOTYJ3EWsXofrKMEs2ogJ1iJYC3yI/De8tFXmEE09r1I9dT472QNNvl+mwIDAQAB">                   
+    <em:targetApplication RDF:resource="rdf:#$gIz+71"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$gIz+71"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:maxVersion="3.0.*"
+                   em:minVersion="2.0" />
+</RDF:RDF>

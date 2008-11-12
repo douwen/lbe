@@ -1,0 +1,137 @@
+#linkmug-link-send-img
+{
+  list-style-image: url("chrome://linkmug/skin/images/logo.png"); 
+}
+#linkmug-link-label
+{
+  color: green; 
+  font-size:16px;
+  font-weight:500;
+}
+#linkmug-msg-send-img
+{
+  list-style-image: url("chrome://linkmug/skin/images/msg.png"); 
+}
+#linkmug-tags-suggest-img
+{
+  list-style-image: url("chrome://linkmug/skin/images/loading.gif"); 
+  display:none;
+}
+#linkmug-msg-label
+{
+  color: green; 
+  font-size:16px;
+  font-weight:500;
+}
+label.link-label
+{
+  color: #7613B4; 
+  font-size:12px; 
+}
+label.link-label-mini
+{
+  color: #73a012; 
+  font-size:11px; 
+}
+label#do-suggest-tags
+{
+  color: #0000FF; 
+  font-size:10px; 
+}
+label#do-suggest-tags:hover
+{
+   cursor:pointer;
+   background-color:blue;
+   color: #FFFFFF;
+   text-decoration: underline; 
+}
+label.suggested-tag
+{
+	cursor:pointer;
+	color: #F66C0E; 
+    font-size:12px;
+    text-decoration: underline; 
+}
+label.suggested-tag:hover
+{
+	background-color:blue;
+   color: #FFFFFF;
+}
+label.no-suggested-tag
+{	
+	color: #997564; 
+    font-size:12px;
+}
+label.mug-title
+{
+  color: #7613B4; 
+  font-size:12px; 
+}
+label.option-label
+{
+  color: #1343B4; 
+  font-size:12px; 
+}
+label#error_message
+{
+  color: #1343B4; 
+  font-size:16px;
+}
+
+#linkmug-receiver-wizard-img
+{
+  list-style-image: url("chrome://linkmug/skin/images/mug.png"); 
+}
+#linkmug-receiver-label
+{
+  color: green; 
+  font-size:16px;
+  font-weight:500;
+}
+listitem[status="select"]
+{
+	background-color: #90EE90;
+}
+checkbox.mug_name
+{
+	color: green; 
+  font-size:16px;
+  font-weight:500;
+}
+label.text-link
+{
+   font-size:0.8em;
+}
+
+vbox#send-link-vbox
+{
+   min-width:600px;
+   max-width:600px;
+}
+groupbox#link-send-gbox
+{
+   min-width:580px;
+  
+}
+vbox#send-msg-vbox
+{
+   min-width:600px;
+   
+}
+groupbox#send-msg-gbox
+{
+   min-width:580px;
+  
+}
+description#desc_selectmug
+{
+   color: #BA7B08;
+   font-size:0.9em;
+}
+label#selected_mug_num
+{
+   color: #0a75d9;
+   font-size:1.2em;
+   font-weight:bold;
+   border-bottom: solid 2px #e50a57;
+}

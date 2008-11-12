@@ -1,0 +1,9 @@
+dialogheader {
+	background-color:#A7CA20;
+}
+description{
+	color:#5D5D5D;
+}
+image#linkmug-info {
+list-style-image: url("chrome://linkmug/skin/images/p-error.png");
+}

@@ -1,0 +1,17 @@
+<!ENTITY Linkmug.Preference		"Linkmug选项">
+<!ENTITY Basic		            "基本选项">
+<!ENTITY Advanced		        "高级选项">
+<!ENTITY Auto.open		        "自动在新的浏览器标签中打开链接">
+<!ENTITY Msg.mugsend		    "当打开发送到Mug界面时,首先显示消息发送界面">
+<!ENTITY Msg.buddysend		    "当打开发送到好友界面时,首先显示消息发送界面">
+<!ENTITY Browser.attention		"当Link或短消息到达时,使浏览器获取焦点">
+<!ENTITY Browser.directshowbar	"当消息到来时，直接显示Linkmug消息条">
+<!ENTITY justfor-experienced	"仅针对有经验用户!">
+<!ENTITY second	                "秒">
+<!ENTITY sync-interval		    "同步间隔">
+<!ENTITY sendcheck-interval		"发送轮询间隔">
+<!ENTITY timeout-threshold		"网络超时阈值">
+<!ENTITY timeout-threshold-hint	"0表示启用系统缺省超时值">
+<!ENTITY Default		        "缺省">
+<!ENTITY Apply		            "应用">
+<!ENTITY Cancel		            "取消">
